@@ -1,0 +1,140 @@
+/* North Star Bakery — Touchstone 3
+   Mobile-first visual system: 4 colors, 2 font families, Flexbox + media query. */
+:root {
+  --cream: #FFF8F0;
+  --brown: #6B3E26;
+  --peach: #D88C5A;
+  --charcoal: #2F2A26;
+  --white: #FFFFFF;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--charcoal);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+h1, h2, legend, .brand {
+  font-family: Georgia, "Times New Roman", serif;
+  color: var(--brown);
+}
+
+h1 { font-size: clamp(2rem, 8vw, 3.6rem); line-height: 1.08; margin: .25rem 0 1rem; }
+h2 { font-size: 1.45rem; margin-top: 0; }
+a { color: var(--brown); }
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible { outline: 3px solid var(--peach); outline-offset: 3px; }
+
+header {
+  background: var(--brown);
+  color: var(--white);
+  border-bottom: 5px solid var(--peach);
+}
+
+.header-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.brand { color: var(--white); font-size: 1.45rem; font-weight: 700; display: flex; align-items: center; gap: .55rem; }
+.brand-mark { color: var(--peach); }
+
+nav ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: .35rem; }
+nav a { display: block; color: var(--white); text-decoration: none; padding: .55rem .7rem; border-radius: .4rem; }
+nav a:hover, nav a[aria-current="page"] { background: var(--peach); color: var(--charcoal); }
+
+main { max-width: 1100px; margin: 0 auto; padding: 1.25rem; }
+.hero { padding: 2.25rem 0 1.5rem; max-width: 780px; }
+.hero.compact { padding-bottom: .75rem; }
+.eyebrow { color: var(--brown); font-weight: 700; letter-spacing: .06em; text-transform: uppercase; font-size: .82rem; }
+
+.button-link, button {
+  display: inline-block;
+  background: var(--brown);
+  color: var(--white);
+  border: 0;
+  border-radius: .45rem;
+  padding: .75rem 1rem;
+  font: inherit;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+}
+.button-link:hover, button:hover { background: var(--peach); color: var(--charcoal); }
+
+.card-grid { display: flex; flex-direction: column; gap: 1rem; padding-bottom: 1.5rem; }
+.card {
+  background: var(--white);
+  border: 1px solid #ead8c9;
+  border-radius: .65rem;
+  padding: 1.15rem;
+  box-shadow: 0 3px 12px rgba(47,42,38,.06);
+  flex: 1 1 260px;
+}
+
+.media-placeholder {
+  min-height: 180px;
+  border-radius: .5rem;
+  background: var(--peach);
+  color: var(--charcoal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  padding: 1rem;
+}
+.media-placeholder.small { min-height: 120px; }
+figure { margin: 1rem 0 0; }
+figcaption { margin-top: .6rem; font-size: .92rem; }
+
+video { width: 100%; max-width: 100%; border-radius: .5rem; background: var(--charcoal); }
+.note { font-size: .9rem; }
+
+.contact-layout { display: flex; flex-direction: column; gap: 1.25rem; padding-bottom: 1.5rem; }
+form, .info-panel {
+  background: var(--white);
+  border: 1px solid #ead8c9;
+  border-radius: .65rem;
+  padding: 1.15rem;
+}
+fieldset { border: 1px solid #d8bca8; border-radius: .5rem; margin: 0 0 1rem; padding: 1rem; }
+legend { font-weight: 700; padding: 0 .35rem; }
+label { display: block; font-weight: 700; margin-top: .75rem; }
+input[type="text"], input[type="email"], input[type="date"], textarea {
+  width: 100%;
+  margin-top: .25rem;
+  padding: .7rem;
+  border: 1px solid #9b8d83;
+  border-radius: .35rem;
+  background: var(--white);
+  color: var(--charcoal);
+  font: inherit;
+}
+.radio-row { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem; }
+.radio-row label { display: inline; margin: 0 1rem 0 0; }
+
+footer { background: var(--charcoal); color: var(--white); text-align: center; padding: 1.1rem; }
+footer p { margin: 0; }
+
+@media (min-width: 760px) {
+  .header-inner { flex-direction: row; justify-content: space-between; align-items: center; }
+  nav ul { flex-direction: row; flex-wrap: wrap; justify-content: flex-end; }
+  main { padding: 1.75rem; }
+  .card-grid { flex-direction: row; flex-wrap: wrap; }
+  .card-grid .card { flex: 1 1 calc(50% - 1rem); }
+  .products .card { flex-basis: calc(50% - 1rem); }
+  .contact-layout { flex-direction: row; align-items: flex-start; }
+  .contact-layout form { flex: 2 1 620px; }
+  .info-panel { flex: 1 1 260px; }
+}
