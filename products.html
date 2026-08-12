@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>North Star Bakery | Products</title>
   <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
 <header>
@@ -28,6 +29,20 @@
   </section>
 
   <div class="card-grid products">
+
+    <section class="card favorite-feature" aria-labelledby="favorite-heading">
+      <h2 id="favorite-heading">Choose Your Bakery Favorite</h2>
+      <p>Select one bakery item to save as your favorite. Your choice will be remembered when you return.</p>
+
+      <label for="favorite-product">Favorite bakery item</label>
+      <select id="favorite-product" name="favorite-product">
+        <option value="">Select an item</option>
+      </select>
+
+      <button type="button" id="save-favorite">Save Favorite</button>
+      <p id="favorite-result" class="feedback-message" aria-live="polite"></p>
+    </section>
+
     <section class="card">
       <h2>Breads</h2>
       <div class="media-placeholder" role="img" aria-label="Assortment of artisan bread loaves displayed at North Star Bakery">Artisan breads</div>

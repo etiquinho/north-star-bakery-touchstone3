@@ -138,3 +138,46 @@ footer p { margin: 0; }
   .contact-layout form { flex: 2 1 620px; }
   .info-panel { flex: 1 1 260px; }
 }
+
+
+/* Touchstone 4: JavaScript feature, validation, and browser-storage feedback */
+select {
+  width: 100%;
+  margin-top: .25rem;
+  margin-bottom: .75rem;
+  padding: .7rem;
+  border: 1px solid #9b8d83;
+  border-radius: .35rem;
+  background: var(--white);
+  color: var(--charcoal);
+  font: inherit;
+}
+
+.favorite-feature {
+  border-top: 5px solid var(--peach);
+}
+
+.feedback-message {
+  margin-top: .85rem;
+  font-weight: 700;
+  color: var(--brown);
+}
+
+.field-error {
+  min-height: 1.2em;
+  margin: .3rem 0 0;
+  font-size: .92rem;
+  font-weight: 700;
+  color: #8b1e1e;
+}
+
+.input-error {
+  border: 2px solid #8b1e1e !important;
+}
+
+.saved-value {
+  background: #fff3e9;
+  border-left: 4px solid var(--peach);
+  padding: .65rem .75rem;
+  border-radius: .35rem;
+}
